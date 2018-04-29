@@ -28,6 +28,10 @@ namespace ORMAprill29ASPMvc6
         {
             services.AddDbContext<ApplicationDbContext>(options =>
                 options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
+            services.AddDbContext<Student29AprilContext>(options =>
+               options.UseSqlServer(Configuration.GetConnectionString("OurCN")));
+
+
 
             services.AddIdentity<ApplicationUser, IdentityRole>()
                 .AddEntityFrameworkStores<ApplicationDbContext>()
