@@ -8,23 +8,24 @@ namespace ORMAprill29ASPMvc6.Models
     {
         public virtual DbSet<Studinfo> Studinfo { get; set; }
         public virtual DbSet<Teachinfo> Teachinfo { get; set; }
+        public virtual DbSet<Principle> Principle { get; set; }
 
-        //public Student29AprilContext(DbContextOptions <Student29AprilContext> obj) : base(obj)
-        //{
-
-        //}
-
-
-        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        public Student29AprilContext(DbContextOptions<Student29AprilContext> obj) : base(obj)
         {
-            if (!optionsBuilder.IsConfigured)
-            {
-#pragma warning disable CS1030 // #warning directive
-#warning To protect potentially sensitive information in your connection string, you should move it out of source code. See http://go.microsoft.com/fwlink/?LinkId=723263 for guidance on storing connection strings.
-                optionsBuilder.UseSqlServer(@"Server=SJ;Database=Student29April;Trusted_Connection=True;");
-#pragma warning restore CS1030 // #warning directive
-            }
+
         }
+
+
+//        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+//        {
+//            if (!optionsBuilder.IsConfigured)
+//            {
+//#pragma warning disable CS1030 // #warning directive
+//#warning To protect potentially sensitive information in your connection string, you should move it out of source code. See http://go.microsoft.com/fwlink/?LinkId=723263 for guidance on storing connection strings.
+//                optionsBuilder.UseSqlServer(@"Server=SJ;Database=Student29April;Trusted_Connection=True;");
+//#pragma warning restore CS1030 // #warning directive
+//            }
+//        }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -58,6 +59,23 @@ namespace ORMAprill29ASPMvc6.Models
                 entity.Property(e => e.FatherName).HasMaxLength(50);
 
                 entity.Property(e => e.Name).HasMaxLength(50);
+            });
+
+            modelBuilder.Entity<Principle>(entity =>
+            {
+                entity.Property(e => e.id).HasColumnName("ID");
+
+                entity.Property(e => e.Adress).HasMaxLength(50);
+
+                entity.Property(e => e.DOB)
+                    .HasColumnName("DOB")
+                    .HasColumnType("date");
+
+                entity.Property(e => e.Name).HasMaxLength(50);
+
+                entity.Property(e => e.CNIC)
+                    .HasColumnName("CNIC")
+                    .HasMaxLength(50);
             });
         }
     }

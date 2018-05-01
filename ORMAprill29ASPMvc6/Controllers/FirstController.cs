@@ -31,5 +31,19 @@ namespace ORMAprill29ASPMvc6.Controllers
 
             return View();
         }
+
+        [HttpGet]
+        public IActionResult Principleinfo()
+        {
+            return View();
+        }
+        [HttpPost]
+        public IActionResult Principleinfo(Principle p)
+        {
+            ORM.Principle.Add(p);
+            ORM.SaveChanges();
+
+            return View();
+        }
     }
 }
