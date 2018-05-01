@@ -43,6 +43,8 @@ namespace ORMAprill29ASPMvc6.Controllers
             ORM.Principle.Add(p);
             ORM.SaveChanges();
 
+            ViewBag.massage = "This is field have been Successful ";
+
             return View();
         }
     }
