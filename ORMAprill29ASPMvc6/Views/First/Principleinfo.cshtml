@@ -9,7 +9,7 @@
 <h4>Principle</h4>
 <hr />
 @if (ViewBag.massage!="" && ViewBag.massage !=null)
-{ <h2 class=" alert alert-success">@ViewBag.massage </h2>}
+{ <h2 class="alert alert-warning">@ViewBag.massage </h2>}
  <hr />
 <div class="row">
     <div class="col-md-4">
@@ -53,4 +53,11 @@
 
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+
+
+    <script>
+        $(function () {
+            $('h2').fadeOut(3000);
+        });
+    </script>
 }
