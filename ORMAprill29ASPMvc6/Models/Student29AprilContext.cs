@@ -9,20 +9,22 @@ namespace ORMAprill29ASPMvc6.Models
         public virtual DbSet<Studinfo> Studinfo { get; set; }
         public virtual DbSet<Teachinfo> Teachinfo { get; set; }
 
-        public Student29AprilContext(DbContextOptions <Student29AprilContext> obj) : base(obj)
+        //public Student29AprilContext(DbContextOptions <Student29AprilContext> obj) : base(obj)
+        //{
+
+        //}
+
+
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            
+            if (!optionsBuilder.IsConfigured)
+            {
+#pragma warning disable CS1030 // #warning directive
+#warning To protect potentially sensitive information in your connection string, you should move it out of source code. See http://go.microsoft.com/fwlink/?LinkId=723263 for guidance on storing connection strings.
+                optionsBuilder.UseSqlServer(@"Server=SJ;Database=Student29April;Trusted_Connection=True;");
+#pragma warning restore CS1030 // #warning directive
+            }
         }
-
-
-//        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-//        {
-//            if (!optionsBuilder.IsConfigured)
-//            {
-//#warning To protect potentially sensitive information in your connection string, you should move it out of source code. See http://go.microsoft.com/fwlink/?LinkId=723263 for guidance on storing connection strings.
-//                optionsBuilder.UseSqlServer(@"Server=SJ;Database=Student29April;Trusted_Connection=True;");
-//            }
-//        }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
