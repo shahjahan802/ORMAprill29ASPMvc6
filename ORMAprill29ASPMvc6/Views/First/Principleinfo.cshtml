@@ -4,60 +4,77 @@
     ViewData["Title"] = "Principleinfo";
 }
 
-<h2>Principleinfo</h2>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"
+          integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+  @*<link rel="stylesheet"href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">*@
+</head>
+<body>
 
-<h4>Principle</h4>
-<hr />
-@if (ViewBag.massage!="" && ViewBag.massage !=null)
-{ <h2 class="alert alert-warning"><span class="glyphicon glyphicon-ok">@ViewBag.massage</span> </h2>}
+    <h2>Principleinfo</h2>
+
+    <h4>Principle</h4>
+    <hr />
+    @if (ViewBag.massage != "" && ViewBag.massage != null)
+    {<h2 class="alert alert-warning"><span class="glyphicon glyphicon-ok">@ViewBag.massage</span> </h2>
+    
  <hr />
-<div class="row">
-    <div class="col-md-4">
-        <form asp-action="Principleinfo">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            @*<div class="form-group">
-                    <label asp-for="id" class="control-label"></label>
-                    <input asp-for="id" class="form-control" />
-                    <span asp-validation-for="id" class="text-danger"></span>
-                </div>*@
-            <div class="form-group">
-                <label asp-for="Name" class="control-label"></label>
-                <input asp-for="Name" class="form-control" />
-                <span asp-validation-for="Name" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="CNIC" class="control-label"></label>
-                <input asp-for="CNIC" class="form-control" />
-                <span asp-validation-for="CNIC" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Adress" class="control-label"></label>
-                <input asp-for="Adress" class="form-control" />
-                <span asp-validation-for="Adress" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="DOB" class="control-label"></label>
-                <input asp-for="DOB" class="form-control" />
-                <span asp-validation-for="DOB" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-default" />
-            </div>
-        </form>
+ <h3> <i class="fab fa-accessible-icon"> @ViewBag.massage</i></h3>
+    }
+    <hr />
+    <div class="row">
+        <div class="col-md-4">
+            <form asp-action="Principleinfo">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                @*<div class="form-group">
+                        <label asp-for="id" class="control-label"></label>
+                        <input asp-for="id" class="form-control" />
+                        <span asp-validation-for="id" class="text-danger"></span>
+                    </div>*@
+                <div class="form-group">
+                    <label asp-for="Name" class="control-label"></label>
+                    <input asp-for="Name" class="form-control" />
+                    <span asp-validation-for="Name" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="CNIC" class="control-label"></label>
+                    <input asp-for="CNIC" class="form-control" />
+                    <span asp-validation-for="CNIC" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Adress" class="control-label"></label>
+                    <input asp-for="Adress" class="form-control" />
+                    <span asp-validation-for="Adress" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="DOB" class="control-label"></label>
+                    <input asp-for="DOB" class="form-control" />
+                    <span asp-validation-for="DOB" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <input type="submit" value="Create" class="btn btn-default" />
+                </div>
+            </form>
+        </div>
     </div>
-</div>
 
-<div>
-    <a asp-action="Index">Back to List</a>
-</div>
+    <div>
+        <a asp-action="Index">Back to List</a>
+    </div>
+    </body>
+</html>
 
-@section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    @section Scripts {
+        @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
 
 
-    <script>
-        $(function () {
-            $('h2').fadeOut(3000);
-        });
-    </script>
-}
+        <script>
+            $(function () {
+                $('h2').fadeOut(3000);
+            });
+        </script>
+    }
