@@ -8,13 +8,13 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <script src="https://use.fontawesome.com/df15d93ce6.js"></script>
-    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"
-          integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" 
+    rel="stylesheet"integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   
+
+   
 </head>
 <body>
 
@@ -22,19 +22,13 @@
 
     <h4>Principle</h4>
     <hr />
-    <div style="font-size:3em; color:Tomato">
-        <i class="fas fa-camera-retro"></i>
-    </div>
     @if (ViewBag.massage != "" && ViewBag.massage != null)
     {<h2 class="alert alert-warning"><span class="glyphicon glyphicon-ok">@ViewBag.massage</span> </h2>
-    <i class="material-icons">accessible</i>
-    <i class="fas fa-american-sign-language-interpreting">font Awesom</i>
+     <h4> <i class="fa fa-hand-peace-o"></i></h4>
     <hr />
-    <i class="fa fa-line-chart" style="font-size:24px"></i>
     <h3> <i class="fa fa-spinner fa-spin"> </i> @ViewBag.massage</h3>
-    <i class="material-icons">cloud</i>
-    <i class="material-icons" style="font-size:48px;color:red">3d_rotation</i>
-}
+    }
+
     <hr />
     <div class="row">
         <div class="col-md-4">
@@ -85,6 +79,7 @@
     <script>
         $(function () {
             $('h2').fadeOut(3000);
+            $('h4').fadeOut(5000);
         });
     </script>
 }
