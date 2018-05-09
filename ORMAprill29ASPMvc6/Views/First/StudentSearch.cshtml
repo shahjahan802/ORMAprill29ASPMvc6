@@ -1,0 +1,64 @@
+﻿@model IEnumerable<Studinfo>
+
+<h2>StudentSearch</h2>
+
+<form method="post" action="/First/studentsearch">
+    <input type="text" name="pmeter" id="pmeter" />
+    <input type="submit" value="Search" />
+</form>
+
+
+@if (Model!=null) { 
+
+<table class="table">
+            <tr>
+            <th>
+                <span class="glyphicon glyphicon-picture"></span> Image
+            </th>
+            <th>
+                <span class="glyphicon glyphicon-user"></span>
+                @Html.DisplayNameFor(model => model.Name)
+            </th>
+            <th>
+
+                <span class="glyphicon glyphicon-log-in"></span>
+                @Html.DisplayNameFor(model => model.Cnic)
+            </th>
+            <th>
+                    <span class="glyphicon glyphicon-lock"></span>
+                    @Html.DisplayNameFor(model => model.Adress)
+                </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Dob)
+            </th>
+           
+        
+  
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    <img src="~/images/Pict-iqbal.jpg" />
+                </td>
+
+
+                <td>
+                    @Html.DisplayFor(modelItem => item.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Cnic)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Adress)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Dob)
+                </td>
+                <td> <a href="/First/StudentDelete?id=@item.Id ">StudentDelete</a></td>
+                <br />
+            </tr>
+          }
+    </tbody>
+</table>
+}

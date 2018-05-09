@@ -1,0 +1,12 @@
+﻿@model IEnumerable<Studinfo>;
+
+@foreach (Studinfo s in Model)
+{
+    <h2>@s.Name</h2>
+    <h2>@s.Adress</h2>
+    <h2>@s.Cnic</h2>
+    <h2>@s.Dob</h2>
+    <br />
+}
+<h2> @Model.Count()</h2>
+<h2> </h2>

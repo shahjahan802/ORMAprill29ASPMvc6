@@ -47,5 +47,45 @@ namespace ORMAprill29ASPMvc6.Controllers
 
             return View();
         }
+            [HttpGet]
+            public IActionResult StudentAllShow()
+            {
+            IList<Studinfo> s = ORM.Studinfo.ToList<Studinfo>();
+            return View(s);
+             }
+        //[HttpGet]
+        //    public IActionResult StudentDetail()
+        //    {
+        //    return View();
+        //     }
+
+        //[HttpPost]
+        public IActionResult StudentDetail(int id)
+            {
+            Studinfo std = ORM.Studinfo.Where(abc => abc.Id == id).SingleOrDefault<Studinfo>();
+            return View(std);
+             }
+       
+        //[HttpPost]
+           public IActionResult StudentDelete(Studinfo s)
+        {
+            ORM.Studinfo.Remove(s);
+            ORM.SaveChanges();
+            return RedirectToAction("StudentAllShow");
+           
+        }
+        [HttpGet]
+        public IActionResult StudentSearch()
+        {
+           
+            return View();
+        }
+        [HttpPost]
+        public IActionResult StudentSearch(string pmeter)
+        {
+            IList<Studinfo> std=ORM.Studinfo.Where(s => s.Name.Contains(pmeter)).ToList<Studinfo>();
+            return View(std);
+        }
+       
     }
 }
