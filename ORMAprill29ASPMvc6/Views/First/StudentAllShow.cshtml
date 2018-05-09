@@ -4,61 +4,92 @@
     ViewData["Title"] = "StudentAllShow";
 }
 
-<h2>StudentAllShow</h2>
+<h3>StudentAllShow</h3>
 
-<p>
-    <a asp-action="Create">Create New</a>
-</p>
-<table class="table">
-    <thead>
-        <tr>
-                 <th>
-                 <span class="glyphicon glyphicon-picture"></span> Image
-                 </th>
-                <th>
-                    <span class="glyphicon glyphicon-user"></span>
-                   @Html.DisplayNameFor(model => model.Name)
-                </th>
-                <th>
 
-                    <span class="glyphicon glyphicon-log-in"></span>
-                    @Html.DisplayNameFor(model => model.Cnic)
-                </th>
-                <th>
-                    <span class="glyphicon glyphicon-lock"></span>
-                    @Html.DisplayNameFor(model => model.Adress)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.Dob)
-                </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-             <img src="~/images/Pict-iqbal.jpg" />
-            </td>
-               
-            
-            <td>
-                @Html.DisplayFor(modelItem => item.Name)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Cnic)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Adress)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Dob)
-            </td>
-            <td> <a href="/First/StudentDelete?id=@item.Id ">StudentDelete</a></td>
-            <br />
-            <td> <a href="/first/StudentDetail?id=@item.Id">StudentDetail</a></td>
-            <br />
-        </tr>
+@*<table class="table">
+        <thead>
+            <tr>
+                     <th>
+                     <span class="glyphicon glyphicon-picture"></span> Image
+                     </th>
+                    <th>
+                        <span class="glyphicon glyphicon-user"></span>
+                       @Html.DisplayNameFor(model => model.Name)
+                    </th>
+                    <th>
+
+                        <span class="glyphicon glyphicon-log-in"></span>
+                        @Html.DisplayNameFor(model => model.Cnic)
+                    </th>
+                    <th>
+                        <span class="glyphicon glyphicon-lock"></span>
+                        @Html.DisplayNameFor(model => model.Adress)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Dob)
+                    </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+
+        </tbody>
+    </table>*@
+
+
+
+
+
+
+
+@foreach (var item in Model)
+{
+    <div class="panel panel-success">
+        <div class="panel panel-body">
+
+
+            <div class="col-md-4">
+                <img src="~/images/Pict-iqbal.jpg" class="img-thumbnail " style="max-width:120px" />
+            </div>
+            <div class="col-md-8">
+               @*<span class="glyphicon glyphicon-apple"></span> @item.Name*@
+               <p> @item.Name</p> 
+                <p> @item.Adress</p> 
+                <p> @item.Cnic</p> 
+                <p> @item.Dob</p> 
+              
+                <div class="text-right">
+                    <a href="/First/StudentDelete?id=@item.Id " class="btn btn-success">  <span class="glyphicon glyphicon-apple"></span> StudentDelete</a>
+
+                    <a href="/first/StudentDetail?id=@item.Id" class="btn btn-default">StudentDetail</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+           //...................................list group item...........................
+
+    @*<ul class="list-group">
+        <div class="col-md-4 ">
+            <li class="list-group-item"><img src="~/images/Pict-iqbal.jpg" class="img-circle " /></li>
+        </div>
+        <div class="col-md-8">
+            <li class="list-group-item">@item.Name</li>
+            <li class="list-group-item">@item.Adress</li>
+            <li class="list-group-item">@item.Cnic</li>
+            <li class="list-group-item">@item.Dob</li>
+        </div>
+    </ul>
+    <br />
+    <div class="clearfix">
+
+    </div>*@
+
 }
-    </tbody>
-</table>
+<div class="clearfix">
+
+</div>
+
+
+
